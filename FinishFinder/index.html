@@ -2,11 +2,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Finish Finder</title>
+		
+	</head>
+
+	<head runat="server">
+	   <meta name="viewport" content="width=device-width,
+	      initial-scale=1" />
+	    <title>Finish Finder</title>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
+	   <link href="css/bootstrap.min.css" rel="stylesheet" />
 	</head>
 
 	<script>
@@ -43,35 +50,31 @@
 			});
 
 			if(finishStr != ''){
-				$("#finishOutputTable").html("<Strong>" + finishStr + "</Strong>");			
+				$("#finishOutputTable").html("<Strong style='color:green;'>" + finishStr + "</Strong>");			
 			}else{
 				finishStr = "No Finish. Keep Shooting Champ!";
-				$("#finishOutputTable").html("<Strong>" + finishStr + "</Strong>");
+				$("#finishOutputTable").html("<Strong style='color:red;'>" + finishStr + "</Strong>");
 			}
 	
 		}
 
 	</script>	
 	
+
 	<body>
+	   <form id="form1" runat="server">
+		<div class="row">
+			<div class="text-center">
+				<img src="MVG.jpg" alt="MVG" width="100%" height="100%">
 
+				<h1>Dart Finish Finder</h1>
+				<p>(enter your current score to find your dart finish)</p>
+				<h3>Score:</h3> <input id="valueInput" onkeyup="CalculateFinish()" max="170" maxlength="3"><br>
 
-		<div class="container well">
-			<h1>Dart Finish Finder</h1>
-			<p>(enter your current score to find your dart finish)</p>
-			<h3>Score:</h3> <input id="valueInput" onkeyup="CalculateFinish()" max="170" maxlength="3"><br>
-
-			<h2 id="finishOutputTable" text-align="center"></h2>		
+				<h2 id="finishOutputTable" text-align="center"></h2>		
+					
+			</div>	
 		</div>	
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="/__/firebase/7.5.0/firebase-app.js"></script>
-
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-	     https://firebase.google.com/docs/web/setup#available-libraries -->
-	<script src="/__/firebase/7.5.0/firebase-analytics.js"></script>
-
-	<!-- Initialize Firebase -->
-	<script src="/__/firebase/init.js"></script>
+	   </form>
 	</body>
-
 </html>
