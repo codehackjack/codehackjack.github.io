@@ -1,0 +1,13 @@
+body {
+    background-color: darkgrey;
+}
+h1 {
+    color: lightgreen;
+    font-family: courier;
+    font-size: 260%;
+    border: 4px solid gold;
+    padding: 90px;
+    background-color: black;
+    text-align: center;
+
+}

@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<script type ="text/javascript">
+		 function WriteToFile(passForm) {
+
+		    set fso = CreateObject("Scripting.FileSystemObject");  
+		    set s = fso.CreateTextFile("C:\test.txt", True);
+		    s.writeline(document.passForm.input1.value);
+		    s.writeline(document.passForm.input2.value);
+		    s.writeline(document.passForm.input3.value);
+		    document.getElementById("FileOutput").innerHTML+=input1.value+" "+input2.value+" "+input3.value;
+		    s.Close();
+		}
+		function myFunction() {
+   			alert("The form was submitted");
+		}
+  </script>
+	</head>	
+	<h2>HTML Forms</h2>
+
+	<form action="/formSubmit.php"onsubmit="myFunction()">
+	  	First name:<br>
+	  	<input type="text" name="input1">
+	  	<br>
+	  	Last name:<br>
+	  	<input type="text" name="input2">
+	  	<br>
+	  	Comment:<br>
+	  	<input type="text" name="input3">
+	  	<br><br>
+	  	<input type="submit" value="Submit">
+	</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a function called "WriteToFile".</p>
+
+<div id="FileOutput"></div>
+</body>
+</html>

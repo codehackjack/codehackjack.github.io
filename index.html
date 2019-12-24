@@ -1,7 +1,41 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<title>codehackjack's lair</title>
+
+	<head>
+  	    <LINK href="style.css" rel="stylesheet" type="text/css"></LINK>
+	</head>
+	<h1>Jack's Dev Portfolio</h1>
+<body onload="GenerateDateStamp()">
+	
+
+	<div class="page">
+		<div id="p02">Active Project Links</div>
+
+		 <div class = "inner"><a href="AsteroidAttacker/index(AsteroidAttacker).html">Asteroid Attacker Game!</a></div> 
+
+		 <div class = "inner"><a href="madlib/index.html">Wacky MadLib!</a></div> 
+
+		 <div class = "inner"><a href="jacksgrass/index.html">Jack's Grass Website</a></div>
+
+		 <div class = "inner"><a href="nailedit/index.html">Nailed it website!</a></div>
+
+		 <div class = "inner"><a href="FMBlog/index.html">Football Manager Blog</a></div>
+        
+        <div id="About" class="tabcontent">
+           
+        </div>
+        
+		<script>
+			function GenerateDateStamp() {
+			    document.getElementsByClassName('dateStamp').innerHTML = " Loaded On " +  Date() + " All Rights Reserved";
+			    //document.getElementById('demo').innerHTML = Date();
+			    document.getElementById("dateStamp").style.color = "lightgreen";
+			}
+		</script> 
+	</div>
+    <div class="dateStamp"></div>
+
 </body>
+
 </html>

@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>Simple Black Jack Clicker Game</title>
+	</head>	
+
+	<script type="text/javascript">
+		var userScore = 0;
+		var drawnCardValue;
+
+		Deal();
+		document.getElementById("score").innerHTML = userScore;
+		
+			//gameloop
+
+		function DrawNewCard(){
+			var newCard = Math.round(Math.random() * 10);
+			AddCardToScore(newCard);
+			return newCard;
+		}
+
+		function AddCardToScore(Card){
+			userScore = userScore + Card;
+			document.getElementById("score").innerHTML = userScore;
+		}
+
+		function Deal(){
+			var cardOne = DrawNewCard();
+			ProcessCard(cardOne);
+			var cardTwo = DrawNewCard();
+			ProcessCard(cardTwo);
+			userScore = cardOne + cardTwo;
+		}
+		function ProcessCard(card){
+			switch(card){
+				case 1:
+					drawnCardValue = "Ace";
+					break;
+				case 2:
+					drawnCardValue = "Two";
+					break;
+				case 3:
+					drawnCardValue = "Three";
+					break;
+				case 4:
+					drawnCardValue = "Four";
+					break;
+				case 5:
+					drawnCardValue = "Five";
+					break;
+				case 6:
+					drawnCardValue = "Six";
+					break;
+				case 7:
+					drawnCardValue = "Seven";
+					break;
+				case 8:
+					drawnCardValue = "Eight";
+					break;
+				case 9:
+					drawnCardValue = "Nine";
+					break;
+				case 10:
+					drawnCardValue = "Ten";
+					break;
+			}
+			document.getElementById("gameOutput").innerHTML += "You Drew A "+drawnCardValue;
+		}
+
+
+
+	</script>
+	<header>Card Clicker</header>
+
+	<div id="userScoreContainer">
+		<div id="score"></div>
+	</div>
+	<div id="menu">
+		<button onclick="DrawNewCard()">Start Game!</button>
+	</div>	
+	<div id="gameOutput">
+	</div>	
+	
+</html>

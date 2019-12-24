@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+    <LINK href="style.css" rel="stylesheet" type="text/css">
+    <title>Nailed It</title>
+    <div class="page">
+        
+        <h1>Home</h1>
+        
+        <body>
+        <div class="tab">
+              <button class="tablinks" onclick="openTab(event, 'Services')">Services</button>
+              <button class="tablinks" onclick="openTab(event, 'Gallery')">Gallery</button>
+              <button class="tablinks" onclick="openTab(event, 'About')">About</button>
+        </div>
+            
+        <div id="Services" class="tabcontent">
+            <h3><a href="services.html">Services</a></h3>
+            <p>Manis, Pedis(in shellac or regular polish)</p>
+        </div>
+
+        <div id="Gallery" class="tabcontent">
+          <h3>Gallery</h3>
+          <p></p> 
+        </div>
+
+        <div id="About" class="tabcontent">
+            <h3><a href="about.html">About Me</a></h3>
+           
+        </div> 
+            
+        <script>
+            function openTab(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+        <div class="lable">This weeks specials</div>    
+        <div class="table">    
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Picture</th>
+                </tr>
+                <tr>
+                    <td>Manicure</td>
+                    <td>20</td>
+                    <td>A application of full polish (Either Shellac or regular) of your choice </td>
+                    <td><img src="1jpg.jpg" alt="1jpg.jpg" style="width:128px;height:128px"></td>
+                </tr>
+                <tr>
+                    <td>Lash Lift</td>
+                    <td>45</td>
+                    <td>A application of eyelash tint and the lifting procedure drastically grows the 
+                    appearence of your natural lashes</td>
+                    <td><img src="2.png" alt="2.png" style="width:128px;height:128px"></td>
+                </tr>
+            </table>
+        </div>
+        </body>
+        <div>All rights reserved of Nailed It limited 2017</div>
+    </div>

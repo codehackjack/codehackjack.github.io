@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<body onload="myFunction()">
+
+		<h2>My First JavaScript</h2>
+
+		<button type="button"
+		onclick="document.getElementById('demo').innerHTML = Date()">
+		Click me to display Date and Time.</button>
+
+		<p id="demo"></p>
+		<script>
+			function myFunction() {
+			    document.getElementById('demo').innerHTML = Date();
+			}
+			function ProcessLogin() {
+				//takes the users input and confirms if it matched the login credentials
+				var inputUsername = document.getElementById('uname').value;
+				var inputPassword = document.getElementById('psw').value;
+
+				if((inputUsername == "Admin")&&(inputPassword == "1234")){
+					//Navigate the User to their next page
+					document.getElementById('LoginStatus').innerHTML = "Doep";
+					window.location = 'http://localhost/dev/WebDevsite/';
+				}else{
+					//display an error message
+					document.getElementById('LoginStatus').innerHTML = "Oops";	
+				}
+			}
+		</script>
+		<div class="containers">
+	      <label for="uname"><b>Username</b></label>
+	      <input type="text" placeholder="Enter Username" id="uname" required>
+
+	      <label for="psw"><b>Password</b></label>
+	      <input type="password" placeholder="Enter Password" id="psw" required>
+	        
+	      <button type="submit" onclick="ProcessLogin()">Login</button>
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Remember me
+	      </label>
+	    </div>
+	    <p id="LoginStatus"></p>
+	</body>
+
+</html>

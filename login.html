@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<title>codehackjack's lair Login Page</title>
+<h1>User Login</h1>
+
+<body onload="init()">
+			<script>
+
+				function changeBGColour(){
+					 window.setInterval(function(){
+			            //changeTextColour();
+			            setRandomColor();
+			        }, 495);
+
+				}
+				 
+				function init() {
+				    document.getElementById('demo').innerHTML = Date();
+				    document.getElementById("demo").style.color = "blue";
+				    //play the audio file
+				    var audio = new Audio('audio.mp3');
+					audio.play();
+					changeBGColour();
+				}
+				function changeTextColour() {
+				//change the color of the text to a random color
+				  document.getElementById("roti").style.color = getRandomColor();
+				  //document.getElementById("colorpad").background-color = getRandomColor();
+				}
+				//creates a unique random colour o use in Html
+
+				function getRandomColor() {
+			 	  var letters = '0123456789ABCDEF';
+				  var color = '#';
+				  for (var i = 0; i < 6; i++) {
+				    color += letters[Math.floor(Math.random() * 16)];
+				  }
+				  return color;
+				}
+				//sets colorpads color to a random color
+				function setRandomColor() {
+				 // $("#loginPage").css("background-color", getRandomColor());
+				 //l document.getElementById("loginPage").style.color = getRandomColor();
+				}
+
+
+
+				function ProcessLogin() {
+					//takes the users input and confirms if it matched the login credentials
+					var inputUsername = document.getElementById('uname').value;
+					var inputPassword = document.getElementById('psw').value;
+
+					if((inputUsername == "Admin")&&(inputPassword == "1234")){
+						//Navigate the User to their next page
+						document.getElementById('LoginStatus').innerHTML = "Doep";
+						window.location = 'http://localhost/dev/WebDevsite/';
+					}else{
+						//display an error message
+						document.getElementById('LoginStatus').innerHTML = "Oops";	
+					}
+				}
+			</script>
+			<div class="loginForm">
+		      <label for="uname"><b>Username</b></label>
+		      <input type="text" placeholder="Enter Username" id="uname" required>
+
+		      <label for="psw"><b>Password</b></label>
+		      <input type="password" placeholder="Enter Password" id="psw" required>
+		        
+		      <button type="submit" onclick="ProcessLogin()">Login</button>
+		      <label>
+		        <input type="checkbox" checked="checked" name="remember"> Remember mes
+		      </label>
+		    </div>
+
+		<p id="demo"></p>    
+	    <p id="LoginStatus"></p>
+	</body>
+</html>
